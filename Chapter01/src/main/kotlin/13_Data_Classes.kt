@@ -3,6 +3,7 @@ data class User(val username: String, private val password: String) {
 }
 
 fun main() {
-    val user = User("Alexey", "abcd1234")
+    val user = User("litt", "K0tl!n")
+    println(user.username)
     println(user.hidePassword())
 }
