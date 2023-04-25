@@ -1,11 +1,14 @@
 import kotlinx.coroutines.*
+import java.lang.Long
+import java.util.function.IntToLongFunction
 import kotlin.random.Random
 
 fun main() = runBlocking {
     val coroutine = async {
         withTimeout(500) {
             try {
-                val time = Random.nextLong(1000)
+//                val time = Random.nextLong(1000)
+                val time = 489L
                 println("It will take me $time to do")
                 delay(time)
                 println("Returning profile")
