@@ -23,7 +23,9 @@ class Player {
 
 class Player(name: String) {
     val name = name
-        get() = field.toUpperCase()
+        get() {
+            return field.lowercase()
+        }
 
     var score: Int = 0
         set(value) {
