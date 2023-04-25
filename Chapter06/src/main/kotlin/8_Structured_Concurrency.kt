@@ -4,7 +4,7 @@ import java.util.*
 
 fun main() = runBlocking {
     val parent = launch(Dispatchers.Default) {
-        supervisorScope {
+//        supervisorScope {
             val children = List(10) { childId ->
                 launch {
                     for (i in 1..1_000_000) {
@@ -19,7 +19,7 @@ fun main() = runBlocking {
                         }
                     }
                 }
-            }
+//            }
         }
     }
 }
