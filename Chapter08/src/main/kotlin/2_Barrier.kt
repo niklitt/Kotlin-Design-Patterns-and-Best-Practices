@@ -10,7 +10,7 @@ fun main() {
         println(measureTimeMillis {
             fetchFavoriteCharacterCorrect("Inigo Montoya")
         })
-        val (name, catchphrase, _) = fetchFavoriteCharacterCorrect("Inigo Montoya")
+        val (name, catchphrase, _) = fetchFavoriteCharacterCorrect("Terminator")
         println("$name says: $catchphrase")
         val characters: List<Deferred<FavoriteCharacter>> =
             listOf(
