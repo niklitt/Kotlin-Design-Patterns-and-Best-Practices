@@ -7,7 +7,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import java.lang.RuntimeException
 
-fun main() {
+fun main() { // Like streaming a show
 
     runBlocking {
         val numbersFlow: Flow<Int> = flow {

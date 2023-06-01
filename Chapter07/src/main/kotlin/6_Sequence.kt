@@ -1,7 +1,7 @@
 fun main() {
     val seq: Sequence<Long> = generateSequence(1L) { it + 1 }
 
-    //seq.forEach { println(it) }
+//    seq.forEach { println(it) }
 
     (1..100).asSequence()
 
