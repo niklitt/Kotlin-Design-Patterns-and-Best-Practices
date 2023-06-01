@@ -9,7 +9,7 @@ fun main() {
 
     println(flattened)
 
-    val flat: List<Int> = listOfLists.flatten()
-    println(flat)
+//    val flat: List<Int> = listOfLists.flatten()
+    println(listOfLists.flatten())
     println(listOfLists.flatMap { it })
 }
