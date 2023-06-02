@@ -1,5 +1,8 @@
 import kotlin.random.Random
 
+/**
+ * How does !! work?
+ */
 fun main() {
     // Will return "String" half of the time and null the other half
     val stringOrNull: String? = if (Random.nextBoolean()) "String" else null

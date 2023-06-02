@@ -5,6 +5,7 @@ fun main() {
     }
 
     println(`007`.name)
+    println(`007`.movie)
 }
 
 class JamesBond {

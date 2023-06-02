@@ -1,5 +1,8 @@
 import kotlin.reflect.KClass
 
+/**
+ * Seems useful, but how often
+ */
 fun main() {
     printIfSameType(Int::class, 1) // Print 1, as 1 is Int
     printIfSameType(Int::class, 2L) // Prints no, as 2 is Long

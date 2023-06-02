@@ -4,7 +4,8 @@ fun main() {
         Empty,
         Node(
             2,
-            Node(3)
+            Node(3),
+            Empty
         )
     )
 
