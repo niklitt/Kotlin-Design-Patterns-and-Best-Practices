@@ -1,6 +1,7 @@
 fun main() {
     doCoolStuff(Batman())
     doCoolStuff(Superman())
+    doCoolStuff(Nate())
 }
 
 fun doCoolStuff(s: Superhero) {
@@ -21,5 +22,11 @@ class Batman : Superhero {
 class Superman : Superhero {
     fun fly() {
         println("Up, up and away!")
+    }
+}
+
+class Nate : Superhero {
+    fun spitFacts() {
+        println("I'm a dummy")
     }
 }
