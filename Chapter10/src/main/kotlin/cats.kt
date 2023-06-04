@@ -5,6 +5,9 @@ import io.ktor.http.*
 import io.ktor.request.*
 import io.ktor.response.*
 import io.ktor.routing.*
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
+import org.jetbrains.exposed.sql.select
+import org.jetbrains.exposed.sql.transactions.transaction
 
 fun Routing.cats(service: CatsService) {
     route("/cats") {
@@ -20,15 +23,22 @@ fun Routing.cats(service: CatsService) {
             call.respond(cats)
         }
         get("/{id}") {
+//            val id = requireNotNull(call.parameters["id"]).toInt()
+//
+//            val cat = service.find(id)
+//
+//            if (cat == null) {
+//                call.respond(HttpStatusCode.NotFound)
+//            } else {
+//                call.respond(cat)
+//            }
             val id = requireNotNull(call.parameters["id"]).toInt()
-
-            val cat = service.find(id)
-
-            if (cat == null) {
-                call.respond(HttpStatusCode.NotFound)
-            } else {
-                call.respond(cat)
+            val cat = transaction {
+                CatsTable.select {
+                    CatsTable.id.eq(id)
+                }.firstOrNull()
             }
+            call.respond("found cat: $cat")
         }
     }
 }

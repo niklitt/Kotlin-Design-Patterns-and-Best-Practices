@@ -6,8 +6,8 @@ object DB {
     private val host = System.getenv("DB_HOST") ?: "localhost"
     private val port = System.getenv("DB_PORT")?.toIntOrNull() ?: 5432
     private val dbName = System.getenv("DB_NAME") ?: "cats_db"
-    private val dbUser = System.getenv("DB_USER") ?: "cats_admin"
-    private val dbPassword = System.getenv("DB_PASSWORD") ?: "abcd1234"
+    private val dbUser = System.getenv("DB_USER") ?: "admin"
+    private val dbPassword = System.getenv("DB_PASSWORD") ?: "secretPass"
     fun connect() = Database.connect(
         "jdbc:postgresql://$host:$port/$dbName",
         driver = "org.postgresql.Driver",

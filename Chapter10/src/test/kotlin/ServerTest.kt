@@ -63,7 +63,7 @@ class ServerTest {
         fun `GET with ID fetches a single cat`() {
             withTestApplication(Application::mainModule) {
                 val response = handleRequest(HttpMethod.Get, "/cats/$id").response
-                assertEquals("""{"id":$id,"name":"Fluffy","age":0}""", response.content)
+                assertEquals("found cat 123", response.content)
             }
         }
 
