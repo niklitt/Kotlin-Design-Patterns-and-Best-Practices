@@ -55,6 +55,7 @@ class ServerVerticle : CoroutineVerticle() {
         router.put("/:id").handler { ctx ->
             launch {
                 val id = ctx.request().getParam("id").toInt()
+                // Parses the req body to get it as a Json and can then use getString() or getInteger()
                 val body: JsonObject = ctx.bodyAsJson.mergeIn(json {
                     obj("id" to id)
                 })
